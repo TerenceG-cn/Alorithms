@@ -1,0 +1,5 @@
+eclipse下项目代码没有错，项目依然报错。
+
+右击项目，选择properties，java complier    、java install、project fafacets全部改成对应的java版本。
+
+具体的原因在markers中有。
