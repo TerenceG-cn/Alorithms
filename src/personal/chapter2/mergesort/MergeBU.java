@@ -1,6 +1,5 @@
 package personal.chapter2.mergesort;
 
-import javax.print.attribute.standard.PrinterMessageFromOperator;
 
 import edu.princeton.cs.algs4.StdOut;
 
