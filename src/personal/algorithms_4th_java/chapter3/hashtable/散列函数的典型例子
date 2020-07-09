@@ -1,0 +1,9 @@
+对键的不同类型需要一个对应的散列函数
+1.正整数：模p取余数。例如地区区号、IP地址
+2.浮点数：如果是0到1的实数，可以将它乘以M并四舍五入到一个0至M-1的索引值。更好的方法是将键表示为二进制然后再使用除留余数法
+3.字符串：除留余数法
+int hash=0;
+for(int i=0;i<s.length();i++)
+    hash=(R*hash+s.charAt(i))%M;//R是一个较小的素数，例如31
+4.组合键：对于Date，day+month+year
+int hash=(((day*R+month)%M)*R+year)%M
