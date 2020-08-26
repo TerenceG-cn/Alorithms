@@ -1,6 +1,5 @@
 package personal.algorithms_4th_java.chapter4.graph;
 
-
 import edu.princeton.cs.algs4.In;
 
 /**

@@ -1,4 +1,5 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             package personal.algorithms_4th_java.chapter2.primary;
+package personal.algorithms_4th_java.chapter2.primary;
+
 //≤Â»Î≈≈–Ú
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;

@@ -1,7 +1,6 @@
 package personal.algorithms_4th_java.chapter3.hashtable;
 
 import java.util.Objects;
-import java.util.Queue;
 
 /**
  * 基于线性探测表的符号表

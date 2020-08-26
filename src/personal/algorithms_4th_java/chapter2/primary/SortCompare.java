@@ -2,7 +2,6 @@ package personal.algorithms_4th_java.chapter2.primary;
 
 import java.util.Random;
 
-import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 //比较两种排序算法的效率

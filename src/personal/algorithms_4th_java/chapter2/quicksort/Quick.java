@@ -1,6 +1,7 @@
 package personal.algorithms_4th_java.chapter2.quicksort;
 
 import personal.algorithms_4th_java.chapter2.primary.Example;
+
 /*
  * ©Лее
  * 
