@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Alorithms&amp;DataStructure.iml" filepath="$PROJECT_DIR$/Alorithms&amp;DataStructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Alorithms.iml" filepath="$PROJECT_DIR$/Alorithms.iml" />
     </modules>
   </component>
 </project>
