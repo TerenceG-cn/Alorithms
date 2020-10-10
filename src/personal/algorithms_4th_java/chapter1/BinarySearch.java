@@ -21,7 +21,6 @@ public class BinarySearch {
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		@SuppressWarnings("deprecation")
 		int[] whitelist=In.readInts("./data/largeW.txt");
 		Arrays.sort(whitelist);

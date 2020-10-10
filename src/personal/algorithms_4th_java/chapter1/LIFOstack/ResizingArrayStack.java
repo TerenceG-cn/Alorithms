@@ -63,7 +63,6 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
 
 	@Override
 	public Iterator<Item> iterator() {
-		// TODO Auto-generated method stub
 		return new ReverseArrayIterator();
 	}
 }

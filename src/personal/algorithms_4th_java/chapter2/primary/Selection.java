@@ -36,7 +36,6 @@ public class Selection {
 		return true;
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("please inputString:");
 		@SuppressWarnings("deprecation")
 		String[] a=In.readStrings();

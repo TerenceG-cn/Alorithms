@@ -13,9 +13,9 @@ public class MainTest {
         try {
             String encoding = "UTF-8";
             File file = new File(filePath);
-            if (file.isFile() && file.exists()) { //ÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚ
+            if (file.isFile() && file.exists()) { //åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨
                 InputStreamReader read = new InputStreamReader(
-                        new FileInputStream(file), encoding);//¿¼ÂÇµ½±àÂë¸ñÊ½
+                        new FileInputStream(file), encoding);//è€ƒè™‘åˆ°ç¼–ç æ ¼å¼
                 BufferedReader bufferedReader = new BufferedReader(read);
 
                 String lineTxt = null;
@@ -25,11 +25,11 @@ public class MainTest {
                 read.close();
                 return result;
             } else {
-                System.out.println("ÕÒ²»µ½Ö¸¶¨µÄÎÄ¼ş");
+                System.out.println("æ‰¾ä¸åˆ°æŒ‡å®šçš„æ–‡ä»¶");
                 return result;
             }
         } catch (Exception e) {
-            System.out.println("¶ÁÈ¡ÎÄ¼şÄÚÈİ³ö´í");
+            System.out.println("è¯»å–æ–‡ä»¶å†…å®¹å‡ºé”™");
             e.printStackTrace();
         }
 
@@ -38,7 +38,7 @@ public class MainTest {
 
     public static void main(String[] args) {
         SeparateChainingHashST<String, Integer> st = new SeparateChainingHashST<>();
-        //"C:\Users\10352\IdeaProjects\Alorithms\src\\personal\\algorithms_4th_java\\chapter3\\hashtable\\hash-attack.txt" ÎÄ¼şÂ·¾¶
+        //"C:\Users\10352\IdeaProjects\Alorithms\src\\personal\\algorithms_4th_java\\chapter3\\hashtable\\hash-attack.txt" æ–‡ä»¶è·¯å¾„
         List<String> hashAtkStr = readTxtFile("src\\personal\\algorithms_4th_java\\chapter3\\hashtable\\hash-attack.txt");
         for (String str :
                 hashAtkStr) {
@@ -52,6 +52,6 @@ public class MainTest {
              keys) {
             System.out.println(str);
         }
-        //Êä³öÊÇµ¹¹ıÀ´µÄ
+        //è¾“å‡ºæ˜¯å€’è¿‡æ¥çš„
     }
 }

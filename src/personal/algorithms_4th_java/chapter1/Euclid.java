@@ -10,7 +10,6 @@ public class Euclid {
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println(gcd(1111111, 1234567));
 	}
 

@@ -7,15 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * »ùÓÚÀ­Á´·¨µÄÉ¢ÁĞ±í
+ * åŸºäºæ‹‰é“¾æ³•çš„æ•£åˆ—è¡¨
  *
  * @param <Key>
  * @param <Value>
  */
 public class SeparateChainingHashST<Key, Value> {
-    private int N;//¼üÖµ¶Ô×ÜÊı
-    private int M;//É¢ÁĞ±íµÄ´óĞ¡
-    private SequentialSearchST<Key, Value>[] st;//´æ·ÅÁ´±í¶ÔÏóµÄÊı×é¡£SequentialSearchSTÊÇÒ»¸öÎŞĞò·ûºÅ±í
+    private int N;//é”®å€¼å¯¹æ€»æ•°
+    private int M;//æ•£åˆ—è¡¨çš„å¤§å°
+    private SequentialSearchST<Key, Value>[] st;//å­˜æ”¾é“¾è¡¨å¯¹è±¡çš„æ•°ç»„ã€‚SequentialSearchSTæ˜¯ä¸€ä¸ªæ— åºç¬¦å·è¡¨
 
     public SeparateChainingHashST() {
         this(997);
@@ -38,7 +38,7 @@ public class SeparateChainingHashST<Key, Value> {
 
     public void put(Key key, Value value) {
         st[hash(key)].put(key, value);
-        //++N;//¿ÉÄÜÒª¼Ó
+        //++N;//å¯èƒ½è¦åŠ 
     }
 
     public Iterable<Key> keys() {//3.4.19

@@ -12,7 +12,6 @@ public class arraysTest {
 		return nn;
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		boolean[][] na=createN(100);
 		System.out.println(na[27][3]);
 	}

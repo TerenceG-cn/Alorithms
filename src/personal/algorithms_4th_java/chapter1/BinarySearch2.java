@@ -24,7 +24,6 @@ public class BinarySearch2 {
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int nums[]={1,2,3,5,6,33,56,442,44455};
 		int key=5;int len=0;
 		System.out.println(rank2(key, nums, 0, nums.length-1,0));

@@ -1,6 +1,12 @@
 package personal.algorithms_4th_java.chapter3.BalancedBinaryTree;
 
-//红黑树，二叉查找树，2-3树
+import sun.reflect.generics.tree.Tree;
+
+import java.util.HashMap;
+import java.util.NoSuchElementException;
+import java.util.TreeMap;
+
+//红黑树,实现2-3树
 public class RedBlackBST<Key extends Comparable<Key>, Value> {
 	private Node root;
 
@@ -36,6 +42,30 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
 
 	public int size() {
 		return size(root);
+	}
+	public boolean isEmpty() {
+		return root == null;
+	}
+
+	//根据key得到value
+	public Value get(Key key) {
+		if (key == null) throw new IllegalArgumentException("argument to get() is null");
+		return get(root, key);
+	}
+
+	// value associated with the given key in subtree rooted at x; null if no such key
+	private Value get(Node x, Key key) {
+		while (x != null) {
+			int cmp = key.compareTo(x.key);
+			if      (cmp < 0) x = x.left;
+			else if (cmp > 0) x = x.right;
+			else              return x.val;
+		}
+		return null;
+	}
+
+	public boolean contains(Key key) {
+		return get(key) != null;
 	}
 
 	// 左旋转
@@ -78,14 +108,15 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
 
 	private Node put(Node h, Key key, Value value) {
 		if (h == null) // 标准的插入操作，和父节点用红链接相连
-			return new Node(key, value, RED, 1);
+			return new Node(key, value, RED, 1);//新插入结点一定是红色，不破坏黑色平衡
+
 		int cmp = key.compareTo(h.key);
 		if (cmp < 0)
-			h.left = put(h.left, key, value);
+			h.left = put(h.left, key, value);//比当前节点小 去左子树插
 		else if (cmp > 0)
-			h.right = put(h.right, key, value);
+			h.right = put(h.right, key, value);//比当前节点大 去右子树插
 		else
-			h.val = value;
+			h.val = value;//找对对应key值更新value
 
 		if (isRed(h.right) && !isRed(h.left))
 			h = rotateLeft(h);
@@ -96,6 +127,69 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
 
 		h.size = size(h.left) + size(h.right) + 1;
 		return h;
+	}
+
+
+	//删除最小键
+	public void deleteMin() {
+		if (isEmpty()) throw new NoSuchElementException("BST underflow");
+
+		// root.left,root.right都是黑节点，root设为红节点
+		if (!isRed(root.left) && !isRed(root.right))
+			root.color = RED;
+
+		root = deleteMin(root);
+		if (!isEmpty()) root.color = BLACK;
+		// assert check();
+	}
+
+	// delete the key-value pair with the minimum key rooted at h
+	private Node deleteMin(Node h) {
+		if (h.left == null)
+			return null;
+
+		if (!isRed(h.left) && !isRed(h.left.left))
+			h = moveRedLeft(h);
+
+		h.left = deleteMin(h.left);
+		return balance(h);
+	}
+	private Node moveRedLeft(Node h) {
+		// assert (h != null);
+		// assert isRed(h) && !isRed(h.left) && !isRed(h.left.left);
+
+		flipColors(h);
+		if (isRed(h.right.left)) {
+			h.right = rotateRight(h.right);
+			h = rotateLeft(h);
+			flipColors(h);
+		}
+		return h;
+	}
+	private Node moveRedRight(Node h) {
+		// assert (h != null);
+		// assert isRed(h) && !isRed(h.right) && !isRed(h.right.left);
+		flipColors(h);
+		if (isRed(h.left.left)) {
+			h = rotateRight(h);
+			flipColors(h);
+		}
+		return h;
+	}
+
+	// restore red-black tree invariant
+	private Node balance(Node h) {
+		// assert (h != null);
+
+		if (isRed(h.right))                      h = rotateLeft(h);
+		if (isRed(h.left) && isRed(h.left.left)) h = rotateRight(h);
+		if (isRed(h.left) && isRed(h.right))     flipColors(h);
+
+		h.size = size(h.left) + size(h.right) + 1;
+		return h;
+	}
+
+	public static void main(String[] args){
 	}
 
 }

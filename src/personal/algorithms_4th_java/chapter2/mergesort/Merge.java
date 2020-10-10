@@ -17,7 +17,7 @@ public class Merge {
 	}
 
 	private static void sort(Comparable[] a, int lo, int hi) {
-		// TODO Auto-generated method stub
+
 		if (hi <= lo)
 			return;
 		int mid = lo + (hi - lo) / 2;

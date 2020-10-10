@@ -11,7 +11,7 @@ import java.util.Iterator;
  * 深度优先搜索实现寻找路径
  */
 public class DepthFirstPaths {
-    private boolean[] marked;//是否在这个顶点伤调用过dfs
+    private boolean[] marked;//是否在这个顶点上调用过dfs
     private int[] edgeTo;//记录从起点s到一个顶点v的已知路径上的最后一个顶点
     private final int s;//起点
 

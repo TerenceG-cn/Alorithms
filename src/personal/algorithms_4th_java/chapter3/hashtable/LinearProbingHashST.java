@@ -3,21 +3,21 @@ package personal.algorithms_4th_java.chapter3.hashtable;
 import java.util.Objects;
 
 /**
- * »ùÓÚÏßĞÔÌ½²â±íµÄ·ûºÅ±í
+ * åŸºäºçº¿æ€§æ¢æµ‹è¡¨çš„ç¬¦å·è¡¨
  *
  * @param <Key>
  * @param <Value>
  */
 public class LinearProbingHashST<Key, Value> {
     private int N;
-    private int M = 16;//ÏßĞÔÌ½²â±íµÄ´óĞ¡
+    private int M = 16;//çº¿æ€§æ¢æµ‹è¡¨çš„å¤§å°
     private Key[] keys;
     private Value[] vals;
 
     public LinearProbingHashST() {
         keys = (Key[]) new Objects[M];
         vals = (Value[]) new Objects[M];
-        //this(M); ²»ÄÜÕâÑùĞ´£¬»á³õÊ¼»¯Ê§°Ü
+        //this(M); ä¸èƒ½è¿™æ ·å†™ï¼Œä¼šåˆå§‹åŒ–å¤±è´¥
     }
 
     public LinearProbingHashST(int cap) {
@@ -79,7 +79,7 @@ public class LinearProbingHashST<Key, Value> {
         keys[i] = null;
         vals[i] = null;
         i = (i + 1) % M;
-        while (keys[i] != null) {//°ÑÉ¾³ı¼üÖµ¶ÔÖ®ºóµÄÖØĞÂ²åÈë
+        while (keys[i] != null) {//æŠŠåˆ é™¤é”®å€¼å¯¹ä¹‹åçš„é‡æ–°æ’å…¥
             Key keyToRedo = keys[i];
             Value valToRedo = vals[i];
             keys[i] = null;

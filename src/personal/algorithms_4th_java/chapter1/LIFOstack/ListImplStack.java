@@ -24,7 +24,6 @@ public class ListImplStack<Item> implements Iterable<Item> {
 
 	@Override
 	public Iterator<Item> iterator() {
-		// TODO Auto-generated method stub
 		return new ListIterator();
 	}
 
@@ -34,13 +33,11 @@ public class ListImplStack<Item> implements Iterable<Item> {
 
 		@Override
 		public boolean hasNext() {
-			// TODO Auto-generated method stub
 			return current != null;
 		}
 
 		@Override
 		public Item next() {
-			// TODO Auto-generated method stub
 			Item item = current.item;
 			current = current.next;
 			return item;

@@ -38,7 +38,6 @@ public class Insertion2 {
 		return true;
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		@SuppressWarnings("deprecation")
 		String[] a=In.readStrings();
 		//System.out.println("NMSL");
