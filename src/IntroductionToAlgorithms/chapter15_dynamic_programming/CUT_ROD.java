@@ -13,7 +13,8 @@ public class CUT_ROD {
      * p206，朴素递归算法，运行时间o(2^n)
      *
      * @param p 钢条价格数组
-     * @param n 钢条长度
+     * @param n 钢条长度git
+     *
      * @return q 最大价格
      */
     public static int cut_rod(int[] p, int n) {
@@ -104,6 +105,7 @@ public class CUT_ROD {
     }
 
     /**
+     * 自底向上的扩展版本
      * @param p
      * @param n
      * @return r[n]:最优收益值 s[n]:最优解对应的第一段钢条的切割长度
@@ -151,9 +153,9 @@ public class CUT_ROD {
         }
     }
 
-    public void print_cut_solution(int[] p, int n) {
+    public void print_cut_solution(int[] p, int n,ResultSet rAnds) {
         //ResultSet rAnds=extended_bottom_up_cut_rod(p,n);
-        ResultSet rAnds = extended_memoized_cut_rod(p, n);
+        //ResultSet rAnds = extended_memoized_cut_rod(p, n);
         System.out.println("最大收益：" + rAnds.getR()[n]);
         System.out.print("切割方案：");
         while (n > 0) {
@@ -163,6 +165,31 @@ public class CUT_ROD {
         System.out.println();
     }
 
+    /**
+     * 15.1-3
+     * @param p
+     * @param n
+     * @param c 每次切割的成本
+     * @return
+     */
+    public ResultSet cost_bottom_up_cut_rod(int[] p, int n,int c) {
+        int r[] = new int[n + 1];
+        int s[] = new int[n + 1];
+        r[0] = 0;
+        for (int j = 1; j <= n; j++) {
+            int q = -1;
+            for (int i = 1; i <= Math.min(j, p.length - 1); i++)
+                if (q < (p[i] + r[j - i])) {
+                    q = p[i] + r[j - i];
+                    s[j] = i;
+                }
+            if(j<p.length && q==p[j])//todo
+                r[j] = q;
+            else r[j]=q-c;
+        }
+
+        return new ResultSet(r, s);
+    }
 
     public static void main(String[] args) {
         int[] p = {0, 1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
@@ -173,6 +200,10 @@ public class CUT_ROD {
 //            System.out.println("r"+n+"="+new CUT_ROD().bottom_up_cut_rod(p,n));
 //            new CUT_ROD().print_cut_solution(p,n);
         //new CUT_ROD().print_cut_solution(p,10);
-        new CUT_ROD().print_cut_solution(p, 6978);//6978?会栈越界
+//        new CUT_ROD().print_cut_solution(p, 6978);//6978?会栈越界
+        CUT_ROD cut_rod=new CUT_ROD();
+        ResultSet res=cut_rod.cost_bottom_up_cut_rod(p,23,3);
+        cut_rod.print_cut_solution(p,23,res);
+
     }
 }
