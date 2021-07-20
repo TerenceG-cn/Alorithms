@@ -1,4 +1,4 @@
-package algorithms_4th_java.chapter4.bfs;
+package algorithms_4th_java.chapter4.graph.bfs;
 
 import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.Queue;

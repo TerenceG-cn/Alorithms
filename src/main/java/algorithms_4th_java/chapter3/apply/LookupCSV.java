@@ -21,7 +21,8 @@ public class LookupCSV {
         ST<String, String> st = new ST<String, String>();
 
         // read in the data from csv file
-        In in = new In(args[0]);//args[0]=https://introcs.cs.princeton.edu/java/data/amino.csv
+        //args[0]=https://introcs.cs.princeton.edu/java/data/amino.csv
+        In in = new In(args[0]);
         while (in.hasNextLine()) {
             String line = in.readLine();
             String[] tokens = line.split(",");

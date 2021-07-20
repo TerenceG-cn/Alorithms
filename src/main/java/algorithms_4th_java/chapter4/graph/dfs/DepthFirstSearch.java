@@ -1,11 +1,12 @@
-package algorithms_4th_java.chapter4.dfs;
+package algorithms_4th_java.chapter4.graph.dfs;
 
 
 import edu.princeton.cs.algs4.StdOut;
 import algorithms_4th_java.chapter4.graph.Graph;
 
 public class DepthFirstSearch {
-    private boolean[] marked;//记录和起点联通的所有点，是否在这个顶点伤调用过dfs
+    /** 记录和起点联通的所有点，是否在这个顶点伤调用过dfs*/
+    private boolean[] marked;
     private int count;
 
     public DepthFirstSearch(Graph G, int s) {
@@ -14,12 +15,6 @@ public class DepthFirstSearch {
         this.dfs(G, s);
     }
 
-    /**
-     *
-     *
-     * @param G
-     * @param v
-     */
     /**
      * @author TerenceG
      * @lastmodifydate 2021/4/5
@@ -30,15 +25,10 @@ public class DepthFirstSearch {
      * @Return: void
      */
     private void dfs(Graph G, int v) {
-//        System.out.println("联通"+v);
-//        for(int i=0;i<marked.length;i++)
-//            System.out.print(marked[i]+" ");
-//        System.out.println();
         ++this.count;
         this.marked[v] = true;
 
         for (int w : G.adj(v)) {
-            //System.out.println(v+"-"+w);
             if (!this.marked[w]) {
                 this.dfs(G, w);
             }
