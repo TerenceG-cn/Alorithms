@@ -1,4 +1,4 @@
-package algorithms_4th_java.chapter4.graph;
+package algorithms_4th_java.chapter4;
 
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
@@ -65,14 +65,17 @@ public class Bag<Item> implements Iterable<Item> {
         public ListIterator(Node<Item> first) {
             this.current = first;
         }
+
         @Override
         public boolean hasNext() {
             return this.current != null;
         }
+
         @Override
         public void remove() {
             throw new UnsupportedOperationException();
         }
+
         @Override
         public Item next() {
             if (!this.hasNext()) {

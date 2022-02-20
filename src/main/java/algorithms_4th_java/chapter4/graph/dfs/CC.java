@@ -1,6 +1,6 @@
 package algorithms_4th_java.chapter4.graph.dfs;
 
-import algorithms_4th_java.chapter4.graph.Bag;
+import algorithms_4th_java.chapter4.Bag;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 import algorithms_4th_java.chapter4.graph.Graph;

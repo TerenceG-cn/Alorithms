@@ -1,5 +1,6 @@
 package algorithms_4th_java.chapter4.graph;
 
+import algorithms_4th_java.chapter4.Bag;
 import edu.princeton.cs.algs4.In;
 
 /**
